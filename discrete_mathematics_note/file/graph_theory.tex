@@ -1,0 +1,39 @@
+\part{グラフの基礎概念}
+
+\section{基本的な定義}
+\begin{definition}[グラフ]
+グラフ$G$とは\textbf{頂点集合}$V(G)$と\textbf{辺集合}$E(G)$からなる図形のことである．頂点集合$V(G)$とは\textbf{頂点 (vertex, site)}あるいは\textbf{点}と呼ばれる要素の集合である．また，辺集合$E(G)$とは\textbf{辺 (edge, bond)}と呼ばれる頂点の2元集合の集合からなるものである．
+辺$e\in E(G)$は，頂点$u$, $v$を用いて$e={u, v}$, $e=uv=vu$で表される．ここでは，$e={u, v}$で辺を表す．
+
+頂点集合，辺集合がともに有限集合であるグラフを\textbf{有限グラフ}という．グラフ$G$の頂点数$|V(G)|$を$G$の\textbf{位数 (order)}，辺数$|E(G)|$を$G$のサイズ (size)という．
+\end{definition}
+グラフには，無向グラフと有効グラフの2種類がある．
+\begin{definition}[無向グラフ]
+    辺が，節点2要素からなる集合$\{u,\ v\}$で表されるとき，$G$は\textbf{無向グラフ (undirected graph)}であるという．無向グラフは向きのないグラフであり，単にグラフと呼ぶ．
+\end{definition}
+
+\begin{definition}[有向グラフ]
+    辺に向きのあるグラフ$D$は，\textbf{有向グラフ (directed graph)}と呼ばれ，頂点集合$V(D)$と\textbf{弧 (有向辺)}と呼ばれる頂点の順序対$\{u,v\}$の集合$A(D)$ (\textbf{弧集合})からなる．
+\end{definition}
+
+\begin{definition}[端点，隣接，接続]
+グラフ$G$の頂点$u$と$v$が辺$e$で結ばれているとき，頂点$u$と$v$とは\textbf{隣接 (adjacent)}するという．辺$e$は頂点$u,\ v$と\textbf{接続する}といい，頂点$u,\ v$を辺$e$の\textbf{端点 (edge)}という．
+また，頂点$v$に隣接する頂点全体の集合$v$の近傍といい，$N_G(v)$で表す．辺$e_1$と$e_2$が同一の頂点$u$に接続しているとき2辺は隣接するという．
+\end{definition}
+
+グラフ$G$のある接点$v$に接続する辺の個数を\textbf{次数 (degree)}といい，$\text{deg}_G(v)$または$G$が明らかなときには単に$\text{deg}(v)$と表す．
+有向グラフの頂点の次数は，入次数 (いりじすう，in-degree)と出次数 (でじすう，out-degree)に分けて定義される．
+\begin{definition}[入次数，出次数]
+    $G$が有向グラフであるとき，節点$v$へ入る辺の個数を\textbf{入次数 (in-degree)}といい，$\text{deg}_G^{\text{in}}(v)$または，$\text{deg}^{\text{in}}(v)$と表す．一方，節点$v$から出る辺の個数を\textbf{出次数 (out-degree)}といい，$\text{deg}_G^{\text{out}}(v)$または，$\text{deg}^{\text{out}}(v)$と表す．明らかに，$\text{deg}(v)=\text{deg}^{\text{in}}(v)+\text{deg}^{\text{out}}(v)$であり，辺の個数が保存していることがわかる．
+\end{definition}
+
+
+
+\subsection{木構造}
+\begin{definition}
+    $G$が無閉路 (閉路を含まない) グラフは森，林という．また，$G$が無閉路かつ連結グラフであるとき，$G$を\textbf{木 (tree)}という．特に，有向グラフ$G$が木であるとき，$G$を\textbf{有向木 (directed tree)}という．
+\end{definition}
+
+\begin{definition}[根付き木，二分木]
+    有向木 $T=(V,E)$が一つの接点$r\in V$について，入次数が0であり，その他の各$v\in V-\{r\}$について入次数が1であるとき，$T$を\textbf{根付き木 (rooted tree)} といい，$r$を\textbf{根 (root)}という．(これは入次数0の頂点をちょうど1個もち，ほかの頂点の入次数がすべて1であるということである．) 各節点 (ノード点) の出次数が高々2である根付き木のことを\textbf{二分木 (binary tree)}という． 
+\end{definition}
